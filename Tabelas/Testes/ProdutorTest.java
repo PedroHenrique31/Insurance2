@@ -14,7 +14,7 @@ class ProdutorTest {
     int identificador=9;
 
     @Test
-    void testaConstrutor(){
+    void testaConstrutorProdutor(){
         String nome="Nome Teste";
         int i=9;
         candidato=new Produtor(nome,i);
