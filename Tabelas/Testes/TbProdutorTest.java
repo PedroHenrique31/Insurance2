@@ -1,6 +1,8 @@
 package Tabelas.Testes;
 
+import Tabelas.Produtor;
 import Tabelas.TbProdutor;
+import Tabelas.TipoEstruturado;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -20,7 +22,8 @@ public class TbProdutorTest {
     @Test
     void testLeValor(){
         ClasseTeste.add(nome);
-        String palavra=ClasseTeste.leValor(0);
+        Produtor me=ClasseTeste.get(0);
+        String palavra=me.getNome();
         System.out.println(palavra);
         assertTrue(nome.equals(palavra));
     }
