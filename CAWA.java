@@ -1,7 +1,10 @@
+import Tabelas.TbProdutor;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
 import java.text.DateFormat;
+import java.util.Scanner;
 //import Tabelas.Seguradora;
 
 /*
@@ -41,6 +44,9 @@ public class CAWA {
 
         Calendar calendario_teste=Calendar.getInstance();
         System.out.println("Data e hora atual: "+calendario_teste.getTime());
+
+
+
     }
 }
 

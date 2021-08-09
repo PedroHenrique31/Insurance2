@@ -2,7 +2,7 @@ package Tabelas;
 
 import java.util.ArrayList;
 
-public abstract class TabelaTipoEstruturado {
+public abstract class TabelaTipoEstruturado extends ArrayList {
     ArrayList<TipoEstruturado> Tabela= new ArrayList<>();
 
     public void CriaNovo(String nome){
@@ -12,9 +12,10 @@ public abstract class TabelaTipoEstruturado {
         proximo=valorChave++;
         novo=constroiTipo(nome,proximo);
         Tabela.add(novo);
+        System.out.println("Tamanho tabela: "+Tabela.size()+"Valor: "+Tabela.get(0).nome);
     }
     abstract TipoEstruturado constroiTipo(String nome,int id);//chamao construtor segundo seu tipo
-    public boolean consultaLista(TipoEstruturado candidato){
+    public boolean temNaLista(TipoEstruturado candidato){
         //Verifica se o elemento tem ou não na lista
         for (TipoEstruturado item :Tabela) {
             if(candidato.nome.equals(item.nome)){
@@ -22,6 +23,16 @@ public abstract class TabelaTipoEstruturado {
             }
         }
         return false;
+    }
+    public String leValor(int posicao){
+        TipoEstruturado gary;
+        String nomelido;
+        gary=Tabela.get(posicao);
+        nomelido=gary.nome;
+        return nomelido;
+    }
+    public int tamanho(){
+        return Tabela.size();
     }
 
 }
