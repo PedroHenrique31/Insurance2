@@ -2,6 +2,8 @@ package Tabelas;
 
 import java.util.Locale;
 
+//Classes anêmicas: apenas guardam valores para mostrar em tela
+
 public abstract class TipoEstruturado {
     private int identificador=0;
     String nome;

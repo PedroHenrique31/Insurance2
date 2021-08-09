@@ -45,7 +45,7 @@ public class CAWA {
 }
 
 
-//Classes anêmicas: apenas guardam valores para mostrar em tela
+
 
 
 
