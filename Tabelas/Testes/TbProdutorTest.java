@@ -19,15 +19,16 @@ public class TbProdutorTest {
     }
     @Test
     void testLeValor(){
-        ClasseTeste.CriaNovo(nome);
+        ClasseTeste.add(nome);
         String palavra=ClasseTeste.leValor(0);
         System.out.println(palavra);
         assertTrue(nome.equals(palavra));
     }
     @Test
     void testCriaNovo(){
-        ClasseTeste.CriaNovo(nome);
-        assertTrue(nome.equals("Falta um metodo"));
+        ClasseTeste.add(nome);
+        System.out.println(ClasseTeste.get(0));
+        assertTrue(nome.equals(ClasseTeste.get(0)));
 
     }
 
