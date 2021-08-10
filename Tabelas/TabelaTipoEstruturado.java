@@ -33,7 +33,7 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
         return tamanho;
     }
     public T veElemento(int i){
-
+            return Tabela.get(i);
     }
     /*public void CriaNovo(String nome){
         T novo;
