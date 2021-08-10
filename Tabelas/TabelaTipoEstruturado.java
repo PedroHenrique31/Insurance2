@@ -16,10 +16,23 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
     public ArrayList<T> listaTodos(){
         return Tabela;
     }
-    public void modifica(int posicao,T novo){
+    public void modifica(int posicao,String nome){
         T velho=Tabela.get(posicao),novo;
         int ID=velho.getIdentificador();
+        novo=new T(nome,ID);
         Tabela.set(posicao,novo);
+
+    }
+    public int CodigoUltimoDaLista(){
+        int topo=Tabela.size()-1,retorno;
+        retorno=Tabela.get(topo).getIdentificador();
+        return retorno;
+    }
+    public int tamanhoLista(){
+        int tamanho=Tabela.size();
+        return tamanho;
+    }
+    public T veElemento(int i){
 
     }
     /*public void CriaNovo(String nome){
@@ -29,6 +42,7 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
         Tabela.add(novo);
 
     }*/
-    //abstract TipoEstruturado constroiTipo(String nome,int id);//chamao construtor segundo seu tipo
+    //abstract TipoEstruturado constroiTipo(String nome,int id);//chama o construtor segundo seu tipo
+
 
 }
