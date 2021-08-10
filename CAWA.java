@@ -1,10 +1,5 @@
-import Tabelas.TbProdutor;
-
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
-import java.text.DateFormat;
-import java.util.Scanner;
 //import Tabelas.Seguradora;
 
 /*

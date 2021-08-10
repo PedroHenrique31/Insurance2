@@ -2,9 +2,10 @@ package Tabelas;
 
 import java.util.ArrayList;
 
-public abstract class TabelaTipoEstruturado<T extends TipoEstruturado> {
+public class TabelaTipoEstruturado<T extends TipoEstruturado> {
     ArrayList<T> Tabela=new ArrayList<T>();
     T campoConstante;
+
     public void adicionaNovo(T novo){
         Tabela.add(novo);
     }
@@ -16,7 +17,11 @@ public abstract class TabelaTipoEstruturado<T extends TipoEstruturado> {
         return Tabela;
     }
     public void modifica(int posicao,String nome){
-        Tabela[posicao].nome=nome;
+        T velho=Tabela.get(posicao),novo;
+        int ID=velho.getIdentificador();
+        novo=new T(nome,ID);
+        Tabela.set(posicao,novo);
+
     }
     public void CriaNovo(String nome){
         T novo;

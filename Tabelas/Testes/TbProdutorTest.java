@@ -1,8 +1,7 @@
 package Tabelas.Testes;
 
 import Tabelas.Produtor;
-import Tabelas.TbProdutor;
-import Tabelas.TipoEstruturado;
+import Tabelas.TabelaTipoEstruturado;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -10,14 +9,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 //Classe agora possui um array de produtor, faltam metodos para avaliar eles individualemnte
 public class TbProdutorTest {
-    TbProdutor ClasseTeste=new TbProdutor();
+    TabelaTipoEstruturado<Produtor> TbProdutor =new TabelaTipoEstruturado<>();
     String nome="Glorinha";
 
     @Test
     void testNovoTBProdutor(){
-        TbProdutor Novo;
-        Novo=new TbProdutor();
-        assertNotNull(Novo);
+
+        assertNotNull(TbProdutor);
     }
     @Test
     void testLeValor(){
