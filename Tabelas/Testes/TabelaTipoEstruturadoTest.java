@@ -70,5 +70,31 @@ class TabelaTipoEstruturadoTest {
         assertEquals(ultimolista,comparador);
 
     }
+    @Test
+    void testGeraNovoID(){
+        TbProdutor.adicionaNovo(novinho);
+        Produtor novo=null;
+        int novoID=0;
+        boolean JaExiste,repetiuCodigo=false;
+        for (int i = 0; i < iteracoes ; i++) {
+            novoID= TbProdutor.geraNovoID();
+            novo=new Produtor(nome,novoID);
+            TbProdutor.adicionaNovo(novo);
+        }
+        //Aqui foi adicionado um novo elemento com codigo ja existente
+        novo=new Produtor("Sergio Malandro",novoID);
+        JaExiste=TbProdutor.codigoJaExiste(novoID);
+        TbProdutor.adicionaNovo(novo);
+        repetiuCodigo= (novo.getIdentificador()==novoID);
+
+        for (int i = 0; i < iteracoes; i++) {
+            novoID= TbProdutor.geraNovoID();
+            novo=new Produtor(nome,novoID);
+            TbProdutor.adicionaNovo(novo);
+        }
+        int ultimolista=TbProdutor.tamanhoLista()-1,comparador=TbProdutor.ultimoDaLista();
+        System.out.println("tamanho lista: "+TbProdutor.tamanhoLista());
+        assertFalse(repetiuCodigo);
+    }
 
 }

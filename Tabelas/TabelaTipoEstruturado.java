@@ -7,6 +7,14 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
     T campoConstante;
 
     public void adicionaNovo(T novo){
+        int ID_novo=novo.getIdentificador(),idCorrigida=0;
+        boolean JaExisteID=false;
+        JaExisteID=codigoJaExiste(ID_novo);
+        if(JaExisteID){
+            System.out.println("codigo ja existe");
+            idCorrigida=geraNovoID();
+            novo.setIdentificador(idCorrigida);
+        }
         Tabela.add(novo);
     }
     public T busca(int i){
@@ -41,9 +49,15 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
         //E quando o codigo gerado já existir?
     public int geraNovoID(){
         int fimLista=Tabela.size(),ultimoCod;
+        boolean JaExiste=false;
         T ultimoElemento=Tabela.get(fimLista-1);
         ultimoCod=ultimoElemento.getIdentificador();
         ultimoCod+=1;
+        JaExiste=codigoJaExiste(ultimoCod);
+        while (JaExiste){
+            ultimoCod+=1;
+            JaExiste=codigoJaExiste(ultimoCod);
+        }
         return ultimoCod;
     }
     public int ultimoDaLista(){
@@ -51,7 +65,7 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
     }
     public boolean codigoJaExiste(int codigo){
         boolean Existe=false;
-        for (Produtor item: Tabela) {
+        for (T item: Tabela) {
             Existe=(item.getIdentificador()==codigo);//Existe é verdadeiro se o ID de um item for igual ao codigo consultado.
         }
         return Existe;
