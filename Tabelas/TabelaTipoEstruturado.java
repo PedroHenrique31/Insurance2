@@ -17,10 +17,7 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
         }
         Tabela.add(novo);
     }
-    public T busca(int i){
-        T buscado=Tabela.get(i);
-        return buscado;
-    }
+
     public ArrayList<T> listaTodos(){
         return Tabela;
     }
