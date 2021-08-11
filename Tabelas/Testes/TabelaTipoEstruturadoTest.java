@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TabelaTipoEstruturadoTest {
+class TabelaTipoEstruturadoTest<i> {
     TabelaTipoEstruturado<Produtor> TbProdutor = new TabelaTipoEstruturado<>();
     Produtor novinho = new Produtor("Zé do Picadinho Silva", 22);
     String nome = "Raul Seixas";
-    int iteracoes=100;
+    int iteracoes=1000;
 
     @Test
     void testTbProdutor() {
@@ -95,6 +95,26 @@ class TabelaTipoEstruturadoTest {
         int ultimolista=TbProdutor.tamanhoLista()-1,comparador=TbProdutor.ultimoDaLista();
         System.out.println("tamanho lista: "+TbProdutor.tamanhoLista());
         assertFalse(repetiuCodigo);
+    }/*
+    private void insercao(){
+        int IDnovo;
+        Produtor maisUm;
+        for (int i = 0; i < this.iteracoes; i++) {
+            int IDnovo=TbProdutor.geraNovoID();
+            Produtor maisUm=new Produtor(nome,IDnovo);
+            TbProdutor.adicionaNovo(maisUm);
+        }
+    }*/
+    @Test
+    void testNomesIguais(){
+        TbProdutor.adicionaNovo(novinho);
+        Produtor novo;
+        int novoID;
+        novoID=TbProdutor.geraNovoID();
+        novo=new Produtor(nome,novoID);
+        TbProdutor.adicionaNovo(novo);
+        boolean nomeIgual=TbProdutor.nomeJaExiste(nome);
+        assertFalse(nomeIgual);
     }
 
-}
+}// fim teste

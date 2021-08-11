@@ -4,15 +4,19 @@ import java.util.ArrayList;
 
 public class TabelaTipoEstruturado<T extends TipoEstruturado> {
     ArrayList<T> Tabela=new ArrayList<>();
-
+    //TODO: deve abortar caso usuário queria inserir nome que já existe
     public void adicionaNovo(T novo){
         int ID_novo=novo.getIdentificador(),idCorrigida=0;
-        boolean JaExisteID=false;
+        boolean JaExisteID=false,JaExisteNome=false;
         JaExisteID=codigoJaExiste(ID_novo);
         if(JaExisteID){
             System.out.println("codigo ja existe");
             idCorrigida=geraNovoID();
             novo.setIdentificador(idCorrigida);
+        }
+        JaExisteNome=nomeJaExiste(novo.getNome());
+        if(JaExisteNome){
+            System.out.println("Nome já existente");
         }
         Tabela.add(novo);
     }
