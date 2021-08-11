@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class TabelaTipoEstruturado<T extends TipoEstruturado> {
     ArrayList<T> Tabela=new ArrayList<>();
-    T campoConstante;
 
     public void adicionaNovo(T novo){
         int ID_novo=novo.getIdentificador(),idCorrigida=0;
@@ -67,14 +66,17 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
         }
         return Existe;
     }
-    /*public void CriaNovo(String nome){
-        T novo;
-        int ultimaPosicao=Tabela.size()-1;
-        novo=new T(nome,ultimaPosicao);
-        Tabela.add(novo);
-
-    }*/
-    //abstract TipoEstruturado constroiTipo(String nome,int id);//chama o construtor segundo seu tipo
+    //é necesário tratar  repetições de nomes também
+    /**
+     * nomeJaExiste: este método retorna true se o nome pesquisado existir e false caso contrário.
+     * */
+    public boolean nomeJaExiste(String nome){
+        boolean Existe=false;
+        for ( T item:Tabela) {
+            Existe=(nome.equals(item.getNome()));
+        }
+        return Existe;
+    }
 
 
 }
