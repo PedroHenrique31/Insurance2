@@ -1,7 +1,16 @@
 package Tabelas;
 
 import java.util.ArrayList;
-
+/**
+ *              Classe TabelaTipoEstruturado
+ *
+ *      Essa classe usa generics para gerenciar diversos tipos de coisas.
+ *      Os TiposEstruturados são classes anêmicas que não possuem muitas funções, sua utilidade advém principalmente
+ *    do conjunto destes tipos, daí a necessidade dessa classe.
+ *      Ela deve manter a coesão de dados e estruturas, assegurando:
+ *      1-A não inserção de nomes ou numeros de identificação repetidos;
+ *
+ *    */
 public class TabelaTipoEstruturado<T extends TipoEstruturado> {
     ArrayList<T> Tabela=new ArrayList<>();
     //TODO: deve abortar caso usuário queria inserir nome que já existe
@@ -89,7 +98,7 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
      * */
     public boolean nomeJaExiste(String nome){
         boolean Existe=false;
-        //System.out.println("Chegou na linha 92");
+
         for ( T item:Tabela) {
             Existe=nome.equals(item.getNome());
             //System.out.println("Nome: "+nome+" item nome: "+item.getNome()+" Existe: "+Existe);
@@ -97,7 +106,7 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
                 return Existe;
             }
         }
-        //System.out.println("chegou na linha 96 valor Existe: "+Existe);
+
         return Existe;
     }
 

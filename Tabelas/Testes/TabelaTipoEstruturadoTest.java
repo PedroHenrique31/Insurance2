@@ -14,7 +14,7 @@ class TabelaTipoEstruturadoTest<i> {
     TabelaTipoEstruturado<Produtor> TbProdutor = new TabelaTipoEstruturado<>();
     Produtor novinho = new Produtor("Zé do Picadinho Silva", 22);
     String nome = "Raul Seixas";
-    int iteracoes=1000;
+    int iteracoes=10000;
 
     String geraNomeAleatorio(){
         String nome=new String();
@@ -60,6 +60,7 @@ class TabelaTipoEstruturadoTest<i> {
     }
 
     @Test
+    //TODO:Melhorar esse teste aqui para automatizar as consultas, ele só consulta uma
     void testVeElemento() {
         TbProdutor.adicionaNovo(novinho);
         Produtor verifica = TbProdutor.veElemento(0);
@@ -67,6 +68,7 @@ class TabelaTipoEstruturadoTest<i> {
         assertEquals(novinho.getNome(), verifica.getNome());
     }
     @Test
+    //TODO:Melhorar esse teste, como a função não adiciona nomes repetidos esse teste deu erro
     void testTamanhoLista(){
         int i,total=100,tamanhoDaLista;
         for(i=0;i<total;i++){
@@ -152,7 +154,7 @@ class TabelaTipoEstruturadoTest<i> {
         }
     }
     @Test
-    void testModifica(){
+    void testModifica(){//Função funcionando uma beleza, ela deu erro pois nao adicionou o nome repetido
         insercao();
         Produtor pedro= new Produtor("Pedro Henrique",2);
         int atribuicoes=110;
