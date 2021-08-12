@@ -131,14 +131,10 @@ class TabelaTipoEstruturadoTest<i> {
     }
     @Test
     void testNomesIguais(){
-        TbProdutor.adicionaNovo(novinho);
-        Produtor novo;
-        int novoID;
-        novoID=TbProdutor.geraNovoID();
-        novo=new Produtor(nome,novoID);
-        TbProdutor.adicionaNovo(novo);
-        boolean nomeIgual=TbProdutor.nomeJaExiste(nome);
-        assertFalse(nomeIgual);
+        insercao();
+        boolean nomeIgual=false;
+        nomeIgual=TbProdutor.nomeJaExiste("Zé do Picadinho Silva");
+        assertTrue(nomeIgual);
     }
     @Test
     void testListaTodos(){
@@ -154,6 +150,17 @@ class TabelaTipoEstruturadoTest<i> {
             System.out.println("Nome: "+item.getNome()+" Codigo: "+item.getIdentificador());
             assertEquals(listaGeral.get(i),TbProdutor.veElemento(i));
         }
+    }
+    @Test
+    void testModifica(){
+        insercao();
+        Produtor pedro= new Produtor("Pedro Henrique",2);
+        int atribuicoes=110;
+        for (int i = 0; i < atribuicoes; i++) {
+            TbProdutor.modifica(i,pedro);
+            assertEquals(TbProdutor.veElemento(i).getNome(),pedro.getNome());
+        }
+
     }
 
 }// fim teste

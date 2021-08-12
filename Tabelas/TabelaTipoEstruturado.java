@@ -29,11 +29,20 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
         return Tabela;
     }
     //Cria um tipo T fora com ID=0 aqui ele recebe o ID e entra no lugar de outro elemento da lista
+        //TODO:acaba permitindo a inserção de nomes repetidos, falta verificação
     public void modifica(int posicao,T nome){
         T velho=Tabela.get(posicao);
+        System.out.println("Antigo: "+velho.getNome()+" codigo: "+velho.getIdentificador());
         int ID=velho.getIdentificador();
         nome.setIdentificador(ID);
-        Tabela.set(posicao,nome);
+        if(nomeJaExiste(nome.getNome())){
+            System.out.println("Nome repetido");
+        }else {
+            Tabela.set(posicao, nome);
+            T novo = Tabela.get(posicao);
+            System.out.println("Novo: " + novo.getNome() + " codigo: " + novo.getIdentificador());
+        }
+        System.out.println("Tamanho: "+Tabela.size());
 
     }
     public int CodigoUltimoDaLista(){
@@ -80,9 +89,15 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
      * */
     public boolean nomeJaExiste(String nome){
         boolean Existe=false;
+        //System.out.println("Chegou na linha 92");
         for ( T item:Tabela) {
-            Existe=(nome.equals(item.getNome()));
+            Existe=nome.equals(item.getNome());
+            //System.out.println("Nome: "+nome+" item nome: "+item.getNome()+" Existe: "+Existe);
+            if(Existe) {
+                return Existe;
+            }
         }
+        //System.out.println("chegou na linha 96 valor Existe: "+Existe);
         return Existe;
     }
 
