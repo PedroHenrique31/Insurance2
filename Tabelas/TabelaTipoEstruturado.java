@@ -9,16 +9,20 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
         int ID_novo=novo.getIdentificador(),idCorrigida=0;
         boolean JaExisteID=false,JaExisteNome=false;
         JaExisteID=codigoJaExiste(ID_novo);
+        //Identifica se o numero de ID ja existe e atribui outro automaticamente
         if(JaExisteID){
             System.out.println("codigo ja existe");
             idCorrigida=geraNovoID();
             novo.setIdentificador(idCorrigida);
         }
+        //Avalia se o nome inserido ja existe e aborta se existir
         JaExisteNome=nomeJaExiste(novo.getNome());
         if(JaExisteNome){
             System.out.println("Nome já existente");
+
+        }else {
+            Tabela.add(novo);
         }
-        Tabela.add(novo);
     }
 
     public ArrayList<T> listaTodos(){

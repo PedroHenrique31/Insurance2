@@ -2,7 +2,11 @@ package Tabelas.Testes;
 
 import Tabelas.Produtor;
 import Tabelas.TabelaTipoEstruturado;
+import org.jetbrains.annotations.Async;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,6 +15,22 @@ class TabelaTipoEstruturadoTest<i> {
     Produtor novinho = new Produtor("Zé do Picadinho Silva", 22);
     String nome = "Raul Seixas";
     int iteracoes=1000;
+
+    String geraNomeAleatorio(){
+        String nome=new String();
+        char letra;
+        int numeroAleatorio;
+        Random alea=new Random();
+        for (int i = 0; i < 20; i++) {
+            numeroAleatorio=alea.nextInt(128);
+            numeroAleatorio+=48;
+            letra=(char)numeroAleatorio;
+            nome=nome+letra;
+        }
+        //System.out.println("String gerada "+nome);
+        return nome;
+
+    }
 
     @Test
     void testTbProdutor() {
@@ -26,7 +46,7 @@ class TabelaTipoEstruturadoTest<i> {
 
         for(int i=0;i<iteracoes;i++){
             novoID= TbProdutor.geraNovoID();
-            novo=new Produtor(nome, novoID);
+            novo=new Produtor(geraNomeAleatorio(), novoID);
             TbProdutor.adicionaNovo(novo);
         }
 
@@ -35,6 +55,7 @@ class TabelaTipoEstruturadoTest<i> {
         TbProdutor.adicionaNovo(novo);
         ultimoElemento = TbProdutor.veElemento(TbProdutor.tamanhoLista()-1);// eis o poblema
         System.out.println("Ultimo nome: "+ultimoElemento.getNome()+" ultimo codigo: "+ultimoElemento.getIdentificador());
+        System.out.println("tamanho: "+TbProdutor.tamanhoLista());
         assertEquals(novo.getIdentificador(), ultimoElemento.getIdentificador());
     }
 
@@ -95,16 +116,19 @@ class TabelaTipoEstruturadoTest<i> {
         int ultimolista=TbProdutor.tamanhoLista()-1,comparador=TbProdutor.ultimoDaLista();
         System.out.println("tamanho lista: "+TbProdutor.tamanhoLista());
         assertFalse(repetiuCodigo);
-    }/*
+    }
+
     private void insercao(){
+        TbProdutor.adicionaNovo(novinho);
         int IDnovo;
         Produtor maisUm;
         for (int i = 0; i < this.iteracoes; i++) {
-            int IDnovo=TbProdutor.geraNovoID();
-            Produtor maisUm=new Produtor(nome,IDnovo);
+            IDnovo=TbProdutor.geraNovoID();
+            maisUm=new Produtor(nome,IDnovo);
+            maisUm=new Produtor(geraNomeAleatorio(),IDnovo);
             TbProdutor.adicionaNovo(maisUm);
         }
-    }*/
+    }
     @Test
     void testNomesIguais(){
         TbProdutor.adicionaNovo(novinho);
@@ -115,6 +139,21 @@ class TabelaTipoEstruturadoTest<i> {
         TbProdutor.adicionaNovo(novo);
         boolean nomeIgual=TbProdutor.nomeJaExiste(nome);
         assertFalse(nomeIgual);
+    }
+    @Test
+    void testListaTodos(){
+        ArrayList<Produtor> listaGeral;
+        insercao();
+        System.out.println("tamanho lista: "+TbProdutor.tamanhoLista());
+        listaGeral=TbProdutor.listaTodos();
+        Produtor item;
+        int tamanhoLista=TbProdutor.tamanhoLista();
+        System.out.println("=======================================================================");
+        for (int i = 0; i < tamanhoLista; i++) {
+            item=TbProdutor.veElemento(i);
+            System.out.println("Nome: "+item.getNome()+" Codigo: "+item.getIdentificador());
+            assertEquals(listaGeral.get(i),TbProdutor.veElemento(i));
+        }
     }
 
 }// fim teste
