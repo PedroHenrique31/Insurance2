@@ -154,13 +154,14 @@ class TabelaTipoEstruturadoTest<i> {
         }
     }
     @Test
-    void testModifica(){//Função funcionando uma beleza, ela deu erro pois nao adicionou o nome repetido
+    void testModifica(){//Função funcionando uma beleza, ela deu erro pois nao adicionou o nome repetido,por isso quebra no assetFalse
         insercao();
         Produtor pedro= new Produtor("Pedro Henrique",2);
         int atribuicoes=110;
         for (int i = 0; i < atribuicoes; i++) {
             TbProdutor.modifica(i,pedro);
-            assertEquals(TbProdutor.veElemento(i).getNome(),pedro.getNome());
+            assertTrue(TbProdutor.veElemento(i).getNome().equals(pedro.getNome()));
+            assertFalse(TbProdutor.veElemento(i).getNome().equals(pedro.getNome()));
         }
 
     }
