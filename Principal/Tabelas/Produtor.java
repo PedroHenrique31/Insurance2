@@ -1,4 +1,4 @@
-package Tabelas;
+package Principal.Tabelas;
 
 public class Produtor extends TipoEstruturado{
     public Produtor(String nome, int id) {

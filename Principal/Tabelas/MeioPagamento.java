@@ -1,4 +1,4 @@
-package Tabelas;
+package Principal.Tabelas;
 
 public class MeioPagamento extends TipoEstruturado{
     public MeioPagamento(String nome,int id){

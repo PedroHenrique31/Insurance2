@@ -1,6 +1,6 @@
 package Tabelas.Testes;
 
-import Tabelas.Produtor;
+import Principal.Tabelas.Produtor;
 import org.junit.jupiter.api.Test;
 
 import java.util.Locale;

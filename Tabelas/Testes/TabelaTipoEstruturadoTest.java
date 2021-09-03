@@ -1,7 +1,7 @@
 package Tabelas.Testes;
 
-import Tabelas.Produtor;
-import Tabelas.TabelaTipoEstruturado;
+import Principal.Tabelas.Produtor;
+import Principal.Tabelas.TabelaTipoEstruturado;
 //import org.jetbrains.annotations.Async;
 import org.junit.jupiter.api.Test;
 

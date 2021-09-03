@@ -1,4 +1,4 @@
-package Tabelas;
+package Principal.Tabelas;
 
 import java.util.Locale;
 
