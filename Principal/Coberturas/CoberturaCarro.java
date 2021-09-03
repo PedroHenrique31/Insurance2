@@ -1,4 +1,4 @@
-package Principal;
+package Principal.Coberturas;
 
 //TODO:algo como uma chave dupla ajudaria a indentificar o tipo e posteriormente a apolice
 public class CoberturaCarro implements Cobertura {

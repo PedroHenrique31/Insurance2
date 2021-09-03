@@ -1,4 +1,4 @@
-package Principal;
+package Principal.Coberturas;
 
 // Classe cobertura é uma classe abstrata pois depende do tipo de produto comercializado
 public interface Cobertura{

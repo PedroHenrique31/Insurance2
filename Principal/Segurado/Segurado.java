@@ -1,5 +1,5 @@
 
-package Principal;
+package Principal.Segurado;
 import java.util.ArrayList;
 
 public class Segurado {//Classe 1

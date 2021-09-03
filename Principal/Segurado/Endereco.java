@@ -1,4 +1,4 @@
-package Principal;
+package Principal.Segurado;
 
 public class Endereco {//Classe 8
     int ID_SEGURADO;
