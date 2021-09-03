@@ -1,6 +1,7 @@
 
 package Principal.Segurado;
 import java.util.ArrayList;
+import Principal.Apolice;
 
 public class Segurado {//Classe 1
     int ID_SEGURADO;
