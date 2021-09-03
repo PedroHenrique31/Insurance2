@@ -1,4 +1,4 @@
-package Tabelas.Testes;
+package Testes.Testes;
 
 import Principal.Tabelas.Produtor;
 import org.junit.jupiter.api.Test;
