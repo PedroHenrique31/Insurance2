@@ -27,6 +27,12 @@ public class Apolice {//Classe 2
     Assistencia assistencia;
 
     //Classes do pacote Principal
+    Carro veiculo;//Se a apolice for de automovel
+    String clausula,comentario;
+    //Primitivos de Apolice
+    double  premioLiq,premioTotal;
+
+
 
 
 }

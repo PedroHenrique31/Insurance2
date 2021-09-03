@@ -3,7 +3,8 @@ package Principal;
 //TODO:algo como uma chave dupla ajudaria a indentificar o tipo e posteriormente a apolice
 public class CoberturaCarro implements Cobertura {
     int ID_COBERTURA, ID_SEGURO, TipoCobertura = 1;
-    double RCDanosMoraisEsteticos, RCDanosMaterias, RCDanosCorpo, APPMortePassageiro, APPInvalidezPassgeiro,
+    double RCDanosMoraisEsteticos, RCDanosMaterias, RCDanosCorpo, APPMortePassageiro,
+            APPInvalidezPassageiro,
             CoberturaPrincipal;
     boolean Atinfurto, TipoFranquia;
     int BonusAuto, BonusRCF, DiasDeCarroReserva;
