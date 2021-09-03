@@ -2,7 +2,7 @@ package Tabelas.Testes;
 
 import Tabelas.Produtor;
 import Tabelas.TabelaTipoEstruturado;
-import org.jetbrains.annotations.Async;
+//import org.jetbrains.annotations.Async;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
