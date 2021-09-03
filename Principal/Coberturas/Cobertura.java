@@ -1,3 +1,9 @@
+/**
+ *              Interface Cobertura
+ *     A cobertura foi implementada como uma interface, pois cada ipo de cobertura varia conforme
+ *   o produto coberto e a Seguradora (Existem auxilios que uma fornece e outra não), logo não há
+ *   razão para utilizarmos uma classe abstrata, mas uma interface (será?).
+ *   */
 package Principal.Coberturas;
 
 // Classe cobertura é uma classe abstrata pois depende do tipo de produto comercializado
