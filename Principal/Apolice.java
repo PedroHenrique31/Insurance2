@@ -47,5 +47,7 @@ public class Apolice {//Classe 2
     *   3-Finda apolice: destroi esta apolice, seja por fim de vigencia e/ou cancelamento de seguro;
     *   4-Renovação apolice: reaproveita informações da apolice anterior, pois o seguro foi renovado
     * por mais um ano.*/
-
-}
+    public Apolice(String NumeroApolice,String Regiao){
+        //Criar aqui objetos como:carro,FormaPagamento,meio...
+    }
+}//FimClasse Apolice
