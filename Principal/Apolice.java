@@ -34,6 +34,18 @@ public class Apolice {//Classe 2
     double  premioLiq,premioTotal;
 
 
-
+    /* Funcionalidades de Apolice envolvem:
+    *   1-Cria uma nova apolice: onde é preciso criar um novo bem (que definirá o tipo da apolice),
+    * determinar ID_SEGURO,preencher:NumeroApolice,Regiao,meioPagamento,FormaPagamento,Produtor,
+    * Assistencia,Carro,premioLiq e premioTotal;
+    *       1.1-Posteriormente se adiciona comentarios e clausulas.
+    *   2-Endosso de apolice:algum tipo de alteração contratual (como uma mudança de carro),
+    * mas que preserva demais parametros(com excessão talvez dos valores de premio) nesse caso temos que
+    * descobrir o que se quer alterar para modificar, perguntar se alterará o premio e se for o caso
+    * modificar seu valor;
+    *       2.1-a alteração dos campos clausula e comentario é livre;
+    *   3-Finda apolice: destoi esta apolice, seja por fim de vigencia e/ou cancelamento de seguro;
+    *   4-Renovação apolice: reaproveita informações da apolice anterior, pois o seguro foi renovado
+    * por mais um ano.*/
 
 }
