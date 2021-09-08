@@ -13,6 +13,7 @@ import Principal.Tabelas.FormaPagamento;
 import Principal.Tabelas.Produtor;
 import Principal.Tabelas.Assistencia;
 import Principal.Tabelas.Seguradora;
+import Principal.Bens.Carro;
 
 //Apolice poderia ser uma classe abstrata a depender do tipo de produto coberto
 public class Apolice {//Classe 2
