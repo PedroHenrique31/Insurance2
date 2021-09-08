@@ -44,7 +44,7 @@ public class Apolice {//Classe 2
     * descobrir o que se quer alterar para modificar, perguntar se alterará o premio e se for o caso
     * modificar seu valor;
     *       2.1-a alteração dos campos clausula e comentario é livre;
-    *   3-Finda apolice: destoi esta apolice, seja por fim de vigencia e/ou cancelamento de seguro;
+    *   3-Finda apolice: destroi esta apolice, seja por fim de vigencia e/ou cancelamento de seguro;
     *   4-Renovação apolice: reaproveita informações da apolice anterior, pois o seguro foi renovado
     * por mais um ano.*/
 
