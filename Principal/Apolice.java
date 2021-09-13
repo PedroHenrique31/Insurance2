@@ -15,11 +15,10 @@ import Principal.Tabelas.Assistencia;
 import Principal.Tabelas.Seguradora;
 import Principal.Bens.Carro;
 
-import java.text.Normalizer;
 
 //Apolice poderia ser uma classe abstrata a depender do tipo de produto coberto
 public class Apolice {//Classe 2
-    int ID_SEGURO;
+    private int ID_SEGURO;//é o BD quem vai setar esse valor
     String NumeroApolice,Regiao;
     //Datas de início de fim de vigencia e data atual
     Seguradora SeguradoraAnterior,SeguradoraAtual;
@@ -49,20 +48,45 @@ public class Apolice {//Classe 2
     *   3-Finda apolice: destroi esta apolice, seja por fim de vigencia e/ou cancelamento de seguro;
     *   4-Renovação apolice: reaproveita informações da apolice anterior, pois o seguro foi renovado
     * por mais um ano.*/
-    public Apolice(String NumeroApolice, String Regiao, Seguradora anterior, Seguradora atual,
+    public Apolice(String NumeroApolice, String Regiao, Seguradora anterior, Seguradora atual,Ramo ramo,
                    MeioPagamento pagamentoMeio, FormaPagamento pagForma,Produtor produtor,
                    Assistencia assistencia,Carro carro,double premioLiq,double premioTotal){
-        //TODO:PRECISA FUNÇÕES PARA TESTAR OS TIPOS ESTRUTURADOS.
+        //NOTE: OS TIPOS ESTRUTURADOS DEVEM VIR JÁ VERIFICADOS.
         this.NumeroApolice=NumeroApolice;
         this.Regiao=Regiao;
-        this.SeguradoraAnterior=anterior;//precisa verificar isso
-        this.SeguradoraAtual=atual;//precisa verificar isso
-        this.meioPagamento=pagamentoMeio;//precisa verificar isso
-        this.formaPagamento=pagForma;//precisa verificar isso
-        this.produtor=produtor;//precisa verificar isso
-        this.assistencia=assistencia;//precisa verificar isso
+        this.SeguradoraAnterior=anterior;//deve estar verificado
+        this.SeguradoraAtual=atual;//deve estar verificado
+        this.meioPagamento=pagamentoMeio;//deve estar verificado
+        this.formaPagamento=pagForma;//deve estar verificado
+        this.produtor=produtor;//deve estar verificado
+        this.assistencia=assistencia;//deve estar verificado
         this.veiculo=carro;
         this.premioLiq=premioLiq;
         this.premioTotal=premioTotal;
+        this.ramo=ramo;//deve estar verificado
+    }
+
+    public void setClausula(String clausula) {
+        this.clausula = clausula;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
+    public String getClausula() {
+        return clausula;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setID_SEGURO(int ID_SEGURO) {
+        this.ID_SEGURO = ID_SEGURO;
+    }
+
+    public int getID_SEGURO() {
+        return ID_SEGURO;
     }
 }//FimClasse Apolice

@@ -109,6 +109,23 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
 
         return Existe;
     }
+    /**
+     * método buscaNome: recebe uma String nome e verifica se o mesmo existe na tabela, se
+     * não exisitir retorna null, se sim devolve o objeto.
+     * Obs: não testada porém derivada de nomJaExiste*/
+    public T buscaNome(String nome){
+        boolean Existe=false;
+
+        for ( T item:Tabela) {
+            Existe=nome.equals(item.getNome());
+
+            if(Existe) {
+                return item;
+            }
+        }
+
+        return null;
+    }
 
 
 }
