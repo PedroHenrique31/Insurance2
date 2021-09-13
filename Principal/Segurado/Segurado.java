@@ -6,20 +6,20 @@ import java.util.Locale;
 import Principal.Apolice;
 
 public class Segurado {//Classe 1
-    private int ID_SEGURADO;
+    private int ID_SEGURADO,tamanho=50;
     String Empresa, Nome, Grupo, Observacao1, Profissao, CPF, Indicacao;
     double Renda, RG;
 
     //Lista de telefones de contato
-    ArrayList<Telefone> Telefones = new ArrayList<Telefone>();
+    ArrayList<Telefone> Telefones = new ArrayList<Telefone>(tamanho);
     //Lista de emails
-    ArrayList<Email> emails = new ArrayList<Email>();
+    ArrayList<Email> emails = new ArrayList<Email>(tamanho);
     //Lista de endereços
-    ArrayList<Endereco> Enderecos = new ArrayList<Endereco>();
+    ArrayList<Endereco> Enderecos = new ArrayList<Endereco>(tamanho);
     //Lista de apólices
-    ArrayList<Apolice> Apolices = new ArrayList<Apolice>();
+    ArrayList<Apolice> Apolices = new ArrayList<Apolice>(tamanho);
     //Lista de Dependentes
-    ArrayList<Dependente> Dependentes = new ArrayList<Dependente>();
+    ArrayList<Dependente> Dependentes = new ArrayList<Dependente>(tamanho);
 
     public void setID_SEGURADO(int ID_SEGURADO) {
         this.ID_SEGURADO = ID_SEGURADO;
@@ -53,5 +53,16 @@ public class Segurado {//Classe 1
 
     public String getObservacao1() {
         return Observacao1;
+    }
+
+    public void setEmail(String email) {
+        //TODO:verificar para saber se email já não existe e se o usuário quer adicionar uma nota sobre o email
+        Email enderecoemail=new Email(email);
+        emails.add(enderecoemail);
+    }
+
+    public Email getEmails() {
+        //TODO:Procura pelo email e o retorna se não retorna null.
+        return null;
     }
 }
