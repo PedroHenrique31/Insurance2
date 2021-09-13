@@ -57,12 +57,26 @@ public class Segurado {//Classe 1
 
     public void setEmail(String email) {
         //TODO:verificar para saber se email já não existe e se o usuário quer adicionar uma nota sobre o email
-        Email enderecoemail=new Email(email);
-        emails.add(enderecoemail);
+        if(getEmails(email)==null){
+            //faz nada poisnome é repetido.
+        }else {
+            Email enderecoemail = new Email(email);
+            emails.add(enderecoemail);
+        }
     }
 
-    public Email getEmails() {
+    public Email getEmails(String buscado) {//não seria melhor listar tudo?
         //TODO:Procura pelo email e o retorna se não retorna null.
+        boolean JaExiste;
+        for (Email contaEmail:emails) {
+            JaExiste=(contaEmail.email.equals(buscado));
+            if(JaExiste){
+                return contaEmail;
+            }
+        }
         return null;
+    }
+    public ArrayList<Email> listaEmails(){
+        return this.emails;
     }
 }
