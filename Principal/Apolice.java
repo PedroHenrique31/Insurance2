@@ -15,6 +15,8 @@ import Principal.Tabelas.Assistencia;
 import Principal.Tabelas.Seguradora;
 import Principal.Bens.Carro;
 
+import java.text.Normalizer;
+
 //Apolice poderia ser uma classe abstrata a depender do tipo de produto coberto
 public class Apolice {//Classe 2
     int ID_SEGURO;
@@ -47,7 +49,20 @@ public class Apolice {//Classe 2
     *   3-Finda apolice: destroi esta apolice, seja por fim de vigencia e/ou cancelamento de seguro;
     *   4-Renovação apolice: reaproveita informações da apolice anterior, pois o seguro foi renovado
     * por mais um ano.*/
-    public Apolice(String NumeroApolice,String Regiao){
-        //Criar aqui objetos como:carro,FormaPagamento,meio...
+    public Apolice(String NumeroApolice, String Regiao, Seguradora anterior, Seguradora atual,
+                   MeioPagamento pagamentoMeio, FormaPagamento pagForma,Produtor produtor,
+                   Assistencia assistencia,Carro carro,double premioLiq,double premioTotal){
+        //TODO:PRECISA FUNÇÕES PARA TESTAR OS TIPOS ESTRUTURADOS.
+        this.NumeroApolice=NumeroApolice;
+        this.Regiao=Regiao;
+        this.SeguradoraAnterior=anterior;//precisa verificar isso
+        this.SeguradoraAtual=atual;//precisa verificar isso
+        this.meioPagamento=pagamentoMeio;//precisa verificar isso
+        this.formaPagamento=pagForma;//precisa verificar isso
+        this.produtor=produtor;//precisa verificar isso
+        this.assistencia=assistencia;//precisa verificar isso
+        this.veiculo=carro;
+        this.premioLiq=premioLiq;
+        this.premioTotal=premioTotal;
     }
 }//FimClasse Apolice

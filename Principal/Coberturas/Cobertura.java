@@ -9,7 +9,7 @@ package Principal.Coberturas;
 // Classe cobertura é uma classe abstrata pois depende do tipo de produto comercializado
 public interface Cobertura{
     // TODO: aqui criaremos um método para separar as coberturas por tipo, no BD haverá
-    //  uma chave primaria composta de tipo e e ID_COBERTURA
+    //  uma chave primaria composta de tipo e de ID_COBERTURA
     /* Os tipos são:
      * 1-Carro
      * 2-Residencia
