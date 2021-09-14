@@ -12,7 +12,17 @@ import java.util.ArrayList;
  *
  *    */
 public class TabelaTipoEstruturado<T extends TipoEstruturado> {
-    ArrayList<T> Tabela=new ArrayList<>();
+    ArrayList<T> Tabela;
+    /**
+     * Construtor padrão de TabelaTipoEstruturado: cria Tabela vazia.*/
+    public TabelaTipoEstruturado(){
+        Tabela=new ArrayList<>();
+    }
+    /**
+     * Cria TabelaTipoEstruturado com tamanho pré-definido.*/
+    public TabelaTipoEstruturado(int tamanhoInicial){
+        Tabela=new ArrayList<>(tamanhoInicial);
+    }
     //TODO: deve abortar caso usuário queria inserir nome que já existe
     public void adicionaNovo(T novo){
         int ID_novo=novo.getIdentificador(),idCorrigida=0;
@@ -20,14 +30,14 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
         JaExisteID=codigoJaExiste(ID_novo);
         //Identifica se o numero de ID ja existe e atribui outro automaticamente
         if(JaExisteID){
-            System.out.println("codigo ja existe");
+            System.out.println("codigo ja existe");//TODO:lançar excessão
             idCorrigida=geraNovoID();
             novo.setIdentificador(idCorrigida);
         }
         //Avalia se o nome inserido ja existe e aborta se existir
         JaExisteNome=nomeJaExiste(novo.getNome());
         if(JaExisteNome){
-            System.out.println("Nome já existente");
+            System.out.println("Nome já existente");//TODO:lançar excessão
 
         }else {
             Tabela.add(novo);

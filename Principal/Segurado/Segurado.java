@@ -11,15 +11,15 @@ public class Segurado {//Classe 1
     double Renda, RG;
 
     //Lista de telefones de contato
-    ArrayList<Telefone> Telefones = new ArrayList<Telefone>(tamanho);
+    protected ArrayList<Telefone> Telefones = new ArrayList<Telefone>(tamanho);
     //Lista de emails
-    ArrayList<Email> emails = new ArrayList<Email>(tamanho);
+    protected ArrayList<Email> emails = new ArrayList<Email>(tamanho);
     //Lista de endereços
-    ArrayList<Endereco> Enderecos = new ArrayList<Endereco>(tamanho);
+    protected ArrayList<Endereco> Enderecos = new ArrayList<Endereco>(tamanho);
     //Lista de apólices
-    ArrayList<Apolice> Apolices = new ArrayList<Apolice>(tamanho);
+    protected ArrayList<Apolice> Apolices = new ArrayList<Apolice>(tamanho);
     //Lista de Dependentes
-    ArrayList<Dependente> Dependentes = new ArrayList<Dependente>(tamanho);
+    protected ArrayList<Dependente> Dependentes = new ArrayList<Dependente>(tamanho);
 
     public void setID_SEGURADO(int ID_SEGURADO) {
         this.ID_SEGURADO = ID_SEGURADO;
