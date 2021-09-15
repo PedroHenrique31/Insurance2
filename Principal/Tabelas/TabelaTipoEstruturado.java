@@ -1,6 +1,8 @@
 package Principal.Tabelas;
 
 import java.util.ArrayList;
+import java.util.Locale;
+
 /**
  *              Classe TabelaTipoEstruturado
  *
@@ -10,6 +12,9 @@ import java.util.ArrayList;
  *    do conjunto destes tipos, daí a necessidade dessa classe.
  *      Ela deve manter a coesão de dados e estruturas, assegurando:
  *      1-A não inserção de nomes ou numeros de identificação repetidos;---OK
+ *      2-A inexistencia de nomes ou numeros de identificação não listados ou seja,
+ *      presentes em apolices mas não relacionados com dados do BD, para isso ela deve ser consultada
+ *      sempre que for preciso preencher um campo TipoEstruturado.
  *
  *    */
 public class TabelaTipoEstruturado<T extends TipoEstruturado> {
@@ -126,7 +131,7 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
      * Obs: não testada porém derivada de nomJaExiste*/
     public T buscaNome(String nome){
         boolean Existe=false;
-
+        nome=nome.toUpperCase(Locale.ROOT);
         for ( T item:Tabela) {
             Existe=nome.equals(item.getNome());
 

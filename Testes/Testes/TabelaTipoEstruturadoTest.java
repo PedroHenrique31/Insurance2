@@ -132,6 +132,15 @@ class TabelaTipoEstruturadoTest<i> {
             TbProdutor.adicionaNovo(maisUm);
         }
     }
+    void mostraTudo(TabelaTipoEstruturado<Produtor> Tabela){
+        int tamanho=Tabela.tamanhoLista();
+        Produtor item;
+        for (int i=0;i<tamanho;i++) {
+            item=Tabela.veElemento(i);
+            System.out.println(item.getNome()+" "+item.getIdentificador());
+        }
+        System.out.println("------------------------------------------------------------------------");
+    }
     @Test
     void testNomesIguais(){
         insercao();
@@ -180,6 +189,7 @@ class TabelaTipoEstruturadoTest<i> {
             Table.adicionaNovo(aleatorio);
         }
         System.out.println(Table.tamanhoLista());
+        mostraTudo(Table);
         buscado=Table.buscaNome("Zé do Picadinho Silva");
         System.out.println(buscado.getNome()+" "+buscado.getIdentificador());
         assertTrue(buscado.getNome().equals(novinho.getNome()) &&

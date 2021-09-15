@@ -1,6 +1,6 @@
 package Principal.Segurado;
 
-import Principal.Tabelas.TipoEstruturado;
+//import Principal.Tabelas.TipoEstruturado;
 
 public abstract class DadosListadosSegurado {
     int ID_SEGURADO;
