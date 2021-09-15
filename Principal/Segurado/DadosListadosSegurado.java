@@ -4,6 +4,7 @@ package Principal.Segurado;
 
 public abstract class DadosListadosSegurado {
     int ID_SEGURADO;
+    final int tamanhoMaximo=20;
     public DadosListadosSegurado(int ID_SEGURADO){
         this.ID_SEGURADO=ID_SEGURADO;
     }
