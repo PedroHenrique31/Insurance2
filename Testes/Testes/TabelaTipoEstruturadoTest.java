@@ -179,6 +179,7 @@ class TabelaTipoEstruturadoTest<i> {
             aleatorio=new Produtor(geraNomeAleatorio(),i+20);
             Table.adicionaNovo(aleatorio);
         }
+        System.out.println(Table.tamanhoLista());
         buscado=Table.buscaNome("Zé do Picadinho Silva");
         System.out.println(buscado.getNome()+" "+buscado.getIdentificador());
         assertTrue(buscado.getNome().equals(novinho.getNome()) &&
