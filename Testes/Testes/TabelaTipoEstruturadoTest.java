@@ -4,6 +4,7 @@ import Principal.Tabelas.Produtor;
 import Principal.Tabelas.TabelaTipoEstruturado;
 //import org.jetbrains.annotations.Async;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -164,6 +165,24 @@ class TabelaTipoEstruturadoTest<i> {
             assertFalse(TbProdutor.veElemento(i).getNome().equals(pedro.getNome()));
         }
 
+    }
+    @Test
+    void testeBuscaNome(){
+        TabelaTipoEstruturado<Produtor> Table=new TabelaTipoEstruturado<>(50);
+        Produtor aleatorio,buscado;
+        for (int i = 0; i < 25; i++) {//povoa metade de Table
+            aleatorio=new Produtor(geraNomeAleatorio(),i);
+            Table.adicionaNovo(aleatorio);
+        }
+        Table.adicionaNovo(novinho);
+        for (int i = 0; i < 23; i++) {
+            aleatorio=new Produtor(geraNomeAleatorio(),i+20);
+            Table.adicionaNovo(aleatorio);
+        }
+        buscado=Table.buscaNome("Zé do Picadinho Silva");
+        System.out.println(buscado.getNome()+" "+buscado.getIdentificador());
+        assertTrue(buscado.getNome().equals(novinho.getNome()) &&
+                buscado.getIdentificador()==novinho.getIdentificador());
     }
 
 }// fim teste

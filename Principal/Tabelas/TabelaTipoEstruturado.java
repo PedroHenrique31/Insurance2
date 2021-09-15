@@ -5,10 +5,11 @@ import java.util.ArrayList;
  *              Classe TabelaTipoEstruturado
  *
  *      Essa classe usa generics para gerenciar diversos tipos de coisas.
- *      Os TiposEstruturados são classes anêmicas que não possuem muitas funções, sua utilidade advém principalmente
+ *      Os TiposEstruturados são classes anêmicas que não possuem muitas funções,
+ *      sua utilidade advém principalmente
  *    do conjunto destes tipos, daí a necessidade dessa classe.
  *      Ela deve manter a coesão de dados e estruturas, assegurando:
- *      1-A não inserção de nomes ou numeros de identificação repetidos;
+ *      1-A não inserção de nomes ou numeros de identificação repetidos;---OK
  *
  *    */
 public class TabelaTipoEstruturado<T extends TipoEstruturado> {
@@ -51,7 +52,7 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
         //TODO:acaba permitindo a inserção de nomes repetidos, falta verificação
     public void modifica(int posicao,T nome){
         T velho=Tabela.get(posicao);
-        System.out.println("Antigo: "+velho.getNome()+" codigo: "+velho.getIdentificador());
+        System.out.println("Antigo: "+velho.getNome()+" codigo: "+velho.getIdentificador());//Modificou algo
         int ID=velho.getIdentificador();
         nome.setIdentificador(ID);
         if(nomeJaExiste(nome.getNome())){
@@ -102,7 +103,7 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
         }
         return Existe;
     }
-    //é necesário tratar  repetições de nomes também
+    //é necesário tratar repetições de nomes também
     /**
      * nomeJaExiste: este método retorna true se o nome pesquisado existir e false caso contrário.
      * */
@@ -138,4 +139,6 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
     }
 
 
-}
+}//FimClasse
+
+
