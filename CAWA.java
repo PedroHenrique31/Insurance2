@@ -1,3 +1,8 @@
+/**
+ *              CAWA_APP
+ *     @author:Pedro Henrique email:pedrohcaraujo1@hotmail.com
+ *     versão 0.1
+ *     */
 import java.util.Date;
 import java.util.Calendar;
 //import Tabelas.Seguradora;
