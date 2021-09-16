@@ -8,7 +8,6 @@ import org.junit.jupiter.api.TestFactory;
 
 import java.util.ArrayList;
 import java.util.Random;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class TabelaTipoEstruturadoTest<i> {
