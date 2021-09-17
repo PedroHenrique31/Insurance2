@@ -1,5 +1,7 @@
 package Principal.Tabelas;
 
+import Principal.DadosListaveis;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -18,7 +20,7 @@ import java.util.Locale;
  *
  * @author Pedro Henrique Carneiro de Araújo
  *    */
-public class TabelaTipoEstruturado<T extends TipoEstruturado> {
+public class TabelaTipoEstruturado<T extends DadosListaveis> {
     ArrayList<T> Tabela;
     /**
      * Construtor padrão de TabelaTipoEstruturado: cria Tabela vazia.*/

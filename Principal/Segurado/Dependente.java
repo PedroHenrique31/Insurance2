@@ -10,6 +10,7 @@ import java.util.Locale;
 public class Dependente extends DadoDeSegurado {//Classe 6
 
     String NomeDependente, EstadoCivil, Ocupacao, Parentesco;
+    int ID_DEPENDENTE;
     /**
      * public Dependente: cria um dependente em um Segurado.*/
     public Dependente(String nome,String estadoCivil,String ocupacao,String parentesco,
@@ -23,9 +24,12 @@ public class Dependente extends DadoDeSegurado {//Classe 6
     }
     //getters: para caso seja preciso ler fora do pacote.
         //NOTA: alguns atributos não terão setters, pois não faz sentido modificá-los, mas tem setters,e.g. parentesco.
-    public String getNomeDependente() {
+    @Override
+    public String getNome() {
         return NomeDependente;
     }
+    @Override
+    public int getIdentificador(){ return ID_DEPENDENTE;}
 
     public String getEstadoCivil() {
         return EstadoCivil;
@@ -41,7 +45,10 @@ public class Dependente extends DadoDeSegurado {//Classe 6
 
     //setters: para atribuir/alterar valores de Dependente, mesmo fora do pacote.
 
-
+    @Override
+    public void setIdentificador(int identificador){
+        this.ID_DEPENDENTE=identificador;
+    }
     public void setEstadoCivil(String estadoCivil) {
         if(estadoCivil.length()<= tamanhoMaximo)
             this.EstadoCivil = estadoCivil;
@@ -63,4 +70,5 @@ public class Dependente extends DadoDeSegurado {//Classe 6
         else
             System.out.println("lance uma excessão");
     }
+
 }

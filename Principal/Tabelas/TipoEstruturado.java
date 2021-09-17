@@ -1,5 +1,7 @@
 package Principal.Tabelas;
 
+import Principal.DadosListaveis;
+
 import java.util.Locale;
 
 //Classes anêmicas: apenas guardam valores para mostrar em tela
@@ -13,7 +15,7 @@ import java.util.Locale;
  *
  * @author Pedro Henrique Carneiro de Araújo
  * */
-abstract class TipoEstruturado {
+abstract class TipoEstruturado implements DadosListaveis {
     private int identificador=0;
     String nome;
     /**
