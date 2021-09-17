@@ -11,7 +11,7 @@ package Principal.Segurado;
  *    @author Pedro Henrique Carneiro de Araújo*/
 public abstract class DadoDeSegurado {
     protected int ID_SEGURADO;
-    final int tamanhoMaximo=20;
+    static final int tamanhoMaximo=20,tamanhoNome=30,tamanhoEstadoCivil=18;
     public DadoDeSegurado(int ID_SEGURADO){
         this.ID_SEGURADO=ID_SEGURADO;
     }

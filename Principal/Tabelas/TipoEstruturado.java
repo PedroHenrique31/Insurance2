@@ -9,7 +9,10 @@ import java.util.Locale;
  * as acesse e verifique, logo ficam contidas em TabelaTipoEstruturado. Acabam por quase ser uma struct de C
  * daí o nome.
  * Obs:esta classe não deve ser acessível fora de seu pacote, para prevenir que uma classe manipule,
- * diretamente um TipoEstruturado ou acabe por criar um objeto sem correspondencia no BD.*/
+ * diretamente um TipoEstruturado ou acabe por criar um objeto sem correspondencia no BD.
+ *
+ * @author Pedro Henrique Carneiro de Araújo
+ * */
 abstract class TipoEstruturado {
     private int identificador=0;
     String nome;

@@ -5,6 +5,7 @@ import java.util.Locale;
  *          Classe Dependente
  *     É um tipo de DadoDeSegurado, logo ela orbita em torno de segurado e um segurado
  *   pode ter N Dependentes.
+ * @author Pedro Henrique Carneiro de Araújo
  *   */
 public class Dependente extends DadoDeSegurado {//Classe 6
 
@@ -38,4 +39,28 @@ public class Dependente extends DadoDeSegurado {//Classe 6
         return Parentesco;
     }
 
+    //setters: para atribuir/alterar valores de Dependente, mesmo fora do pacote.
+
+
+    public void setEstadoCivil(String estadoCivil) {
+        if(estadoCivil.length()<= tamanhoMaximo)
+            this.EstadoCivil = estadoCivil;
+        else
+            System.out.println("lance uma excessão");
+    }
+
+    public void setOcupacao(String ocupacao) {
+        if(ocupacao.length()<= tamanhoMaximo)
+            this.Ocupacao = ocupacao;
+        else
+            System.out.println("lance uma excessão");
+    }
+
+
+    public void setNomeDependente(String nomeDependente) {
+        if(nomeDependente.length() <= tamanhoMaximo)
+            this.NomeDependente = nomeDependente;
+        else
+            System.out.println("lance uma excessão");
+    }
 }

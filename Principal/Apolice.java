@@ -6,6 +6,7 @@ package Principal;
  *    diversas outras na aplicação, ela varia de acordo com o tipo de produto segurado e
  *    deve possuir tipos de coberturas e ações diferentes para tal(as vezes um generics aqui seria
  *    promissor).
+ *    @author Pedro Henrique Carneiro de Araújo
  *    */
 //TODO:NOTA: EU ACHO QUE APOLICE PODERIA SE BENEFICIAR DE SER UM ABSTRACT FACTORY AO INVES DE USAR
 // GENERICS, POIS TODA APOLICE POSSUI UM BEM E UM RAMO SEGUNDO SEU PRODUTO.

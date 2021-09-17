@@ -1,4 +1,7 @@
 package Principal.Coberturas;
+/**
+ * @author Pedro Henrique Carneiro de Araújo
+ * */
 
 //TODO:algo como uma chave dupla ajudaria a indentificar o tipo e posteriormente a apolice
 public class CoberturaCarro implements Cobertura {

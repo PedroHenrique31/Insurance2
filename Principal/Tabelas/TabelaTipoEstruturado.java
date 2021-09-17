@@ -16,6 +16,7 @@ import java.util.Locale;
  *      presentes em apolices mas não relacionados com dados do BD, para isso ela deve ser consultada
  *      sempre que for preciso preencher um campo TipoEstruturado.
  *
+ * @author Pedro Henrique Carneiro de Araújo
  *    */
 public class TabelaTipoEstruturado<T extends TipoEstruturado> {
     ArrayList<T> Tabela;
