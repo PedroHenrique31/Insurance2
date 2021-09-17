@@ -1,7 +1,9 @@
 /**
  *              CAWA_APP
- *     @author:Pedro Henrique email:pedrohcaraujo1@hotmail.com
- *     versão 0.1
+ *     @author Pedro Henrique
+ *     @email email:pedrohcaraujo1@hotmail.com
+ *     @version 0.1
+ *     @since 2021-09-16
  *     */
 import java.util.Date;
 import java.util.Calendar;
