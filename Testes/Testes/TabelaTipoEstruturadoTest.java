@@ -14,7 +14,7 @@ class TabelaTipoEstruturadoTest<i> {
     TabelaTipoEstruturado<Produtor> TbProdutor = new TabelaTipoEstruturado<>();
     Produtor novinho = new Produtor("Zé do Picadinho Silva", 22);
     String nome = "Raul Seixas";
-    int iteracoes=10000;
+    int iteracoes=100;
 
     String geraNomeAleatorio(){
         String nome=new String();
@@ -193,6 +193,18 @@ class TabelaTipoEstruturadoTest<i> {
         System.out.println(buscado.getNome()+" "+buscado.getIdentificador());
         assertTrue(buscado.getNome().equals(novinho.getNome()) &&
                 buscado.getIdentificador()==novinho.getIdentificador());
+    }
+    @Test
+    void testAdicionaNumeroRepetido(){
+        /*
+        * Tabela mesmo tendo teste para prevenir duplicidade está permitindo a inserção de objetos com
+        * mesmo identificador, porém nomes diferentes.*/
+        Produtor IDrepetida=new Produtor("José Maromba",22);
+        insercao();
+        TbProdutor.adicionaNovo(novinho);
+        TbProdutor.adicionaNovo(IDrepetida);
+        //TbProdutor.adicionaNovo(IDrepetida);
+        mostraTudo(TbProdutor);
     }
 
 }// fim teste

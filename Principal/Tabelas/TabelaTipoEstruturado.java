@@ -106,8 +106,12 @@ public class TabelaTipoEstruturado<T extends DadosListaveis> {
     }
     public boolean codigoJaExiste(int codigo){
         boolean Existe=false;
+        //TODO:modificar esse laço para algum do-while(Existe==false), ou sair dele assim que
+        // existe==true
         for (T item: Tabela) {
-            Existe=(item.getIdentificador()==codigo);//Existe é verdadeiro se o ID de um item for igual ao codigo consultado.
+            Existe=(item.getIdentificador()==codigo);/*Existe é verdadeiro se o ID de um item
+             for igual ao codigo consultado.*/
+            if(Existe){return Existe;}
         }
         return Existe;
     }
