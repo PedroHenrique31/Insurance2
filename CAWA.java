@@ -37,8 +37,9 @@ public class CAWA {
         System.out.println("Olá");
         Date data_atual=new Date();
         System.out.println("Data agora: "+data_atual);
+
+        //Adicionar listas de TipoEstruturado aqui criados com tamanho prévio para prevenir realocações frequentes.
         final int tamanhoTabela=50;
-        //Adicionar listas de TipoEstruturado aqui.
         TabelaTipoEstruturado<Assistencia> assistencias=new TabelaTipoEstruturado<>(tamanhoTabela);
         TabelaTipoEstruturado<Cor> cores=new TabelaTipoEstruturado<>(tamanhoTabela);
         TabelaTipoEstruturado<FormaPagamento> formaPagamento=new TabelaTipoEstruturado<>(tamanhoTabela);
