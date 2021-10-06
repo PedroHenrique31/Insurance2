@@ -198,12 +198,17 @@ class TabelaTipoEstruturadoTest<i> {
     void testAdicionaNumeroRepetido(){
         /*
         * Tabela mesmo tendo teste para prevenir duplicidade está permitindo a inserção de objetos com
-        * mesmo identificador, porém nomes diferentes.*/
+        * mesmo identificador, porém nomes diferentes.
+        * Atualização de 16:15 de 17/09/2021: agora que ela avalia a repetição do codigo ela terminou
+        * por alterar o numero identificador de ZÉ DO PICADINHO SILVA de 22 para 123, isso fez com que ela
+        * terminasse por inserir 2x.
+        *
+        * PS:mas parece estar ok.*/
         Produtor IDrepetida=new Produtor("José Maromba",22);
-        insercao();
-        TbProdutor.adicionaNovo(novinho);
+        insercao();//essa função insere ZÉ DO PICAIDNHO COMO SENDO ID=22;
+        TbProdutor.adicionaNovo(novinho);//tenta inserir zé do picadinho novamente
         TbProdutor.adicionaNovo(IDrepetida);
-        //TbProdutor.adicionaNovo(IDrepetida);
+        TbProdutor.adicionaNovo(IDrepetida);
         mostraTudo(TbProdutor);
     }
 
