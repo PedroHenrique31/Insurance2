@@ -1,7 +1,9 @@
 package Principal.Segurado;
 
 import java.util.Locale;
-
+/**
+ * @author Pedro Henrique Carneiro de Araújo
+ * */
 public class Email {//Classe 7
     int ID_SEGURADO;
     String email, notas;

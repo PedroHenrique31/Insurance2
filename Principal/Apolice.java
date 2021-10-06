@@ -4,16 +4,19 @@ package Principal;
  *          Pertence ao pacote Principal e tem 23 atributos de varias classes,
  *    incluindo quase todos do pacote Tabelas, é uma classe central que agrega
  *    diversas outras na aplicação, ela varia de acordo com o tipo de produto segurado e
- *    deve possuir tipos de coberturas e ações diferentes para tal(as vezes um generics aqui seria promissor).
+ *    deve possuir tipos de coberturas e ações diferentes para tal(as vezes um generics aqui seria
+ *    promissor).
+ *    @author Pedro Henrique Carneiro de Araújo
  *    */
-
+//TODO:NOTA: EU ACHO QUE APOLICE PODERIA SE BENEFICIAR DE SER UM ABSTRACT FACTORY AO INVES DE USAR
+// GENERICS, POIS TODA APOLICE POSSUI UM BEM E UM RAMO SEGUNDO SEU PRODUTO.
 import Principal.Tabelas.Ramo;
 import Principal.Tabelas.MeioPagamento;
 import Principal.Tabelas.FormaPagamento;
 import Principal.Tabelas.Produtor;
 import Principal.Tabelas.Assistencia;
 import Principal.Tabelas.Seguradora;
-import Principal.Bens.Carro;
+import Principal.Bens.*;
 
 
 //Apolice poderia ser uma classe abstrata a depender do tipo de produto coberto
@@ -29,13 +32,13 @@ public class Apolice {//Classe 2
     Assistencia assistencia;
 
     //Classes do pacote Principal
-    Carro veiculo;//Se a apolice for de automovel
+    Bem veiculo;//Se a apolice for de automovel
     String clausula,comentario;
     //Primitivos de Apolice
     double  premioLiq,premioTotal;
 
 
-    /* Funcionalidades de Apolice envolvem:
+    /** Funcionalidades de Apolice envolvem:
     *   1-Cria uma nova apolice: onde é preciso criar um novo bem (que definirá o tipo da apolice),
     * determinar ID_SEGURO,preencher:NumeroApolice,Regiao,meioPagamento,FormaPagamento,Produtor,
     * Assistencia,Carro,premioLiq e premioTotal;
@@ -48,6 +51,7 @@ public class Apolice {//Classe 2
     *   3-Finda apolice: destroi esta apolice, seja por fim de vigencia e/ou cancelamento de seguro;
     *   4-Renovação apolice: reaproveita informações da apolice anterior, pois o seguro foi renovado
     * por mais um ano.*/
+    //TODO:Abstract factory seria util aqui também,pois o bem é preciso ser criado cada um a seu tipo.
     public Apolice(String NumeroApolice, String Regiao, Seguradora anterior, Seguradora atual,Ramo ramo,
                    MeioPagamento pagamentoMeio, FormaPagamento pagForma,Produtor produtor,
                    Assistencia assistencia,Carro carro,double premioLiq,double premioTotal){

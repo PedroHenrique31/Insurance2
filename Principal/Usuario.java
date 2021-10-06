@@ -1,7 +1,9 @@
 package Principal;
 
 import java.util.Date;
-
+/**
+ * @author Pedro Henrique Carneiro de Araújo
+ * */
 public class Usuario {//Classe 10
     int ID_USUARIO;
     String NomeUsario, Comentario, EstadoCivil, InfoFilhos;

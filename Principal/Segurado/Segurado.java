@@ -1,4 +1,6 @@
-
+/**
+ * @author Pedro Henrique Carneiro de Araújo
+ * */
 package Principal.Segurado;
 import java.util.ArrayList;
 import java.util.Locale;

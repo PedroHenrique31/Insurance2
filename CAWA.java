@@ -7,6 +7,8 @@
  *     */
 import java.util.Date;
 import java.util.Calendar;
+import Principal.Tabelas.*;
+
 //import Tabelas.Seguradora;
 
 /*
@@ -42,6 +44,18 @@ public class CAWA {
         System.out.println("Olá");
         Date data_atual=new Date();
         System.out.println("Data agora: "+data_atual);
+
+        //Adicionar listas de TipoEstruturado aqui criados com tamanho prévio para prevenir realocações frequentes.
+        final int tamanhoTabela=50;
+        TabelaTipoEstruturado<Assistencia> assistencias=new TabelaTipoEstruturado<>(tamanhoTabela);
+        TabelaTipoEstruturado<Cor> cores=new TabelaTipoEstruturado<>(tamanhoTabela);
+        TabelaTipoEstruturado<FormaPagamento> formaPagamento=new TabelaTipoEstruturado<>(tamanhoTabela);
+        TabelaTipoEstruturado<Marca> marcas=new TabelaTipoEstruturado<>(tamanhoTabela);
+        TabelaTipoEstruturado<MeioPagamento> meioPagamentos=new TabelaTipoEstruturado<>(tamanhoTabela);
+        TabelaTipoEstruturado<Produtor> produtores=new TabelaTipoEstruturado<>(tamanhoTabela);
+        TabelaTipoEstruturado<Ramo> ramos=new TabelaTipoEstruturado<>(tamanhoTabela);
+        TabelaTipoEstruturado<Seguradora> seguradoras=new TabelaTipoEstruturado<>(tamanhoTabela);
+        TabelaTipoEstruturado<SubRamo> subRamo=new TabelaTipoEstruturado<>(tamanhoTabela);
 
 
         Calendar calendario_teste=Calendar.getInstance();

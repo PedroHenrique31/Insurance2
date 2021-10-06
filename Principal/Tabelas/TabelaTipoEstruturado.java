@@ -1,5 +1,7 @@
 package Principal.Tabelas;
 
+import Principal.DadosListaveis;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -16,8 +18,9 @@ import java.util.Locale;
  *      presentes em apolices mas não relacionados com dados do BD, para isso ela deve ser consultada
  *      sempre que for preciso preencher um campo TipoEstruturado.
  *
+ * @author Pedro Henrique Carneiro de Araújo
  *    */
-public class TabelaTipoEstruturado<T extends TipoEstruturado> {
+public class TabelaTipoEstruturado<T extends DadosListaveis> {
     ArrayList<T> Tabela;
     /**
      * Construtor padrão de TabelaTipoEstruturado: cria Tabela vazia.*/
@@ -103,8 +106,12 @@ public class TabelaTipoEstruturado<T extends TipoEstruturado> {
     }
     public boolean codigoJaExiste(int codigo){
         boolean Existe=false;
+        //TODO:modificar esse laço para algum do-while(Existe==false), ou sair dele assim que
+        // existe==true
         for (T item: Tabela) {
-            Existe=(item.getIdentificador()==codigo);//Existe é verdadeiro se o ID de um item for igual ao codigo consultado.
+            Existe=(item.getIdentificador()==codigo);/*Existe é verdadeiro se o ID de um item
+             for igual ao codigo consultado.*/
+            if(Existe){return Existe;}
         }
         return Existe;
     }
