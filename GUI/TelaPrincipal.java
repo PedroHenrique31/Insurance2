@@ -25,9 +25,6 @@ public class TelaPrincipal extends JFrame {
 
             contentPane.add(menuBar,BorderLayout.PAGE_START);
 
-
-
-
             setVisible(true);
 
 
