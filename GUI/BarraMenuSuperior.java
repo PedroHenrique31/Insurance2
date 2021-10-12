@@ -52,15 +52,15 @@ public class BarraMenuSuperior extends JMenuBar {
 
         //Cria menu imprimir
         menuItemimpressora= new JMenuItem[5];
-        menuItemimpressora[0]=new JMenuItem("Vencimentos");
+        menuItemimpressora[0]=new JMenuItem("Vencimentos"); //consulta no BD quais apolices vencem no mes corrente
         menuItemimpressora[1]=new JMenuItem("Segurado");
         menuItemimpressora[2]=new JMenuItem("Bem Segurado");
-        menuItemimpressora[3]=new JMenuItem("coisa 3");
+        menuItemimpressora[3]=new JMenuItem("cartões vencimento");
         menuItemimpressora[4]=new JMenuItem("coisa 4");
         subMenuFicha= new JMenu("Apagar isso");
         //Adciona as coisas ao menu
         Imprimir.add(menuItemimpressora[0]);
-        for (int i=1;i<=4;i++){subMenuFicha.add(menuItemimpressora[i]);}
+        for (int i=1;i<=4;i++){Imprimir.add(menuItemimpressora[i]);}
         Imprimir.add(subMenuFicha);
 
 
