@@ -12,7 +12,7 @@ public class BarraMenuSuperior extends JMenuBar {
         super();
         //Conjunto de opções do menuBar
             //Itens dentro das opções da barra de menu
-        menuItemsArquivo=new JMenuItem[2];
+        menuItemsArquivo=new JMenuItem[4];
         menuItemSegurado=new JMenuItem[4];
         menuItemAuto=new JMenuItem[4];
         subMenuFicha=new JMenu("Ficha");
@@ -32,9 +32,11 @@ public class BarraMenuSuperior extends JMenuBar {
         //Cria os subItens para os topicos da barra de menu
 
         //Criar opções do menu Arquivo
-        menuItemsArquivo[0]=new JMenuItem("Abrir arquivo");
-        menuItemsArquivo[1]=new JMenuItem("Buscar");
-        for(int i=0;i<2;i++){menuArquivo.add(menuItemsArquivo[i]);}
+        menuItemsArquivo[0]=new JMenuItem("Puxar do Banco de Dados");
+        menuItemsArquivo[1]=new JMenuItem("Jogar no Banco de Dados");
+        menuItemsArquivo[2]=new JMenuItem("Salvar no Banco de Dados");
+        menuItemsArquivo[3]=new JMenuItem("Atualizar Banco de Dados");
+        for(int i=0;i<4;i++){menuArquivo.add(menuItemsArquivo[i]);}
 
         //Cria opções do menu Segurado
         menuItemSegurado[0]=new JMenuItem("Buscar Segurado");
