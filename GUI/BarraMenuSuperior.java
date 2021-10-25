@@ -40,16 +40,16 @@ public class BarraMenuSuperior extends JMenuBar {
 
         //Cria opções do menu Segurado
         menuItemSegurado[0]=new JMenuItem("Buscar Segurado");
-        menuItemSegurado[1]=new JMenuItem("Incluir");
-        menuItemSegurado[2]= new JMenuItem("Alterar");
+        menuItemSegurado[1]=new JMenuItem("Novo Segurado");
+        menuItemSegurado[2]= new JMenuItem("Alterar dados de Segurado");
         menuItemSegurado[3]=new JMenuItem("Excluir");
         for (int i=0;i<4;i++){menuSegurado.add(menuItemSegurado[i]);}
 
         //Cria opções do menu Auto
-        menuItemAuto[2]= new JMenuItem("Incluir");
-        menuItemAuto[1]= new JMenuItem("Alterar");
-        menuItemAuto[3]= new JMenuItem("Excluir");
-        menuItemAuto[0]= new JMenuItem("Buscar Automóvel");
+        menuItemAuto[2]= new JMenuItem("Novo Auto");
+        menuItemAuto[1]= new JMenuItem("Alterar dados de Auto");
+        menuItemAuto[3]= new JMenuItem("Excluir auto");
+        menuItemAuto[0]= new JMenuItem("Buscar Auto");
         for(int i=0;i<4;i++){menuAuto.add(menuItemAuto[i]);}
 
         //Cria menu imprimir

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.Scanner;
 
 class TelaPrincipalTest {
-    TelaPrincipal gui=new TelaPrincipal();
+    //TelaPrincipal gui=new TelaPrincipal();
     Scanner leitor=new Scanner(System.in);
 
     @Test
