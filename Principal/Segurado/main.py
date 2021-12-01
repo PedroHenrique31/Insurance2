@@ -1,3 +1,0 @@
-import Segurado
-
-print("Ola")
