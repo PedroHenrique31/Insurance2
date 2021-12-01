@@ -1,0 +1,3 @@
+import Segurado
+
+print("Ola")
